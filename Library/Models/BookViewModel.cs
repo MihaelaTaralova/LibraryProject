@@ -15,7 +15,8 @@ namespace Library.Models
         [Required]
         [StringLength(MaxBookAuthor), MinLength(MinBookAuthor)]
         public string Author { get; set; } = null!;
-        [Required]
+
+        [Required(AllowEmptyStrings = false)]
         public string ImageUrl { get; set; } = null!;
         [Required]
         public decimal Rating { get; set; }
@@ -23,6 +24,7 @@ namespace Library.Models
         [Required]
         [StringLength(MaxBookDescription), MinLength(MinBookDescription)]
         public string Description { get; set; } = null!;
+
         [Range(1, int.MaxValue)]
         public int CategoryId { get; set; }
     }
